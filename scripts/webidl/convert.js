@@ -4,7 +4,6 @@
 
 const path = require("path");
 const fs = require("fs");
-const rimraf = require("rimraf");
 
 const Webidl2js = require("webidl2js");
 
@@ -153,6 +152,7 @@ addDir("../../lib/jsdom/living/domparsing");
 addDir("../../lib/jsdom/living/events");
 addDir("../../lib/jsdom/living/fetch");
 addDir("../../lib/jsdom/living/file-api");
+addDir("../../lib/jsdom/living/geometry");
 addDir("../../lib/jsdom/living/hr-time");
 addDir("../../lib/jsdom/living/mutation-observer");
 addDir("../../lib/jsdom/living/navigator");
@@ -169,7 +169,7 @@ addDir("../../lib/jsdom/living/xhr");
 const outputDir = path.resolve(__dirname, "../../lib/jsdom/living/generated/");
 
 // Clean up any old stuff lying around.
-rimraf.sync(outputDir);
+fs.rmSync(outputDir, { force: true, recursive: true, maxRetries: 2 });
 fs.mkdirSync(outputDir);
 
 transformer.generate(outputDir)

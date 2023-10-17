@@ -9,7 +9,7 @@ const { beforeEach, afterEach, describe, specify } = require("mocha-sugar-free")
 const { JSDOM } = require("../../..");
 const { createServer, delay } = require("../../util.js");
 
-describe("level2/style", { skipIfBrowser: true }, () => {
+describe("level2/style", () => {
   specify("HTMLStyleElement01", () => {
     const { window } = new JSDOM(`<html><head><style>p{color:red}</style></head><body>`);
     const style = window.document.head.lastChild;
@@ -210,7 +210,7 @@ describe("level2/style", { skipIfBrowser: true }, () => {
           return delay(100); // HACK: style imports haven"t been processed yet, different bug
         }).then(() => {
           var style = window.getComputedStyle(window.document.body);
-          assert.equal(style.color, "red", "computed color of body is red");
+          assert.equal(style.color, "rgb(255, 0, 0)", "computed color of body is red");
           s.close();
         });
       });
@@ -242,7 +242,7 @@ describe("level2/style", { skipIfBrowser: true }, () => {
         window.onload = () => {
           var div = window.document.getElementsByTagName("div")[0];
           var style = window.getComputedStyle(div);
-          assert.equal(style.color, "red", "computed color of div is red");
+          assert.equal(style.color, "rgb(255, 0, 0)", "computed color of div is red");
           s.close();
           resolve();
         };
@@ -270,7 +270,7 @@ describe("level2/style", { skipIfBrowser: true }, () => {
       @media print { .citation { color: red; } }</style></head>
       <body><p class=\"citation\">Hello</p></body></html>`);
     var style = window.getComputedStyle(window.document.querySelector(".citation"));
-    assert.equal(style.color, "blue", "computed color of p is blue");
+    assert.equal(style.color, "rgb(0, 0, 255)", "computed color of p is blue");
   });
 
   specify("getComputedStyleWithKeyframeRules", () => {

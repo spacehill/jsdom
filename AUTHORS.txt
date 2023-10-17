@@ -128,8 +128,10 @@ James Broad <jb@kulor.com>
 James Kyle <me@thejameskyle.com>
 James McMath <mcmathja@mediant.co>
 James Treworgy <jamietre@gmail.com>
+James Vaughan <james@jamesbvaughan.com>
 Jameson Little <t.jameson.little@gmail.com>
 Jamie Liu <jamie.liu386@gmail.com>
+Jarda Snajdr <jsnajdr@gmail.com>
 Jared Deckard <jared.deckard@gmail.com>
 Jason Davies <jason@jasondavies.com>
 Jason Orendorff <jason.orendorff@gmail.com>
@@ -148,6 +150,7 @@ Johan Sköld <johan@pingdom.com>
 John Hurliman <jhurliman@jhurliman.org>
 John Nguyen <tgohn@users.noreply.github.com>
 John Roberts <jroberts@logitech.com>
+Jon Dufresne <jon.dufresne@gmail.com>
 Jon Jensen <jenseng@gmail.com>
 Jon Sakas <jon.sakas@gmail.com>
 Jonathan Commins <joncom@gmail.com>
@@ -281,6 +284,7 @@ saucy <zekewarren@gmail.com>
 Scott Albertine <scott.albertine@gmail.com>
 Scott Ashton <scottmortonashton@gmail.com>
 Sean Jacke <seanineurope@gmail.com>
+Sean Parmelee <seanparmelee@users.noreply.github.com>
 Sebastiaan Marynissen <sebastiaan.marynissen@gmail.com>
 Sebastian Mayr <github@smayr.name>
 Sebastian McKenzie <sebmck@gmail.com>
@@ -302,6 +306,7 @@ steve <steve@goddamnbugs.com>
 Steve Conover <sconover@gmail.com>
 Sven Müller <sven.mueller@breathless-code.de>
 Swizec Teller <swizec@swizec.com>
+t1ger2080 <108248118+t1ger2080@users.noreply.github.com>
 Thiago Hirata <hirata@devcase.com.br>
 Thomas Chung <thomas@nomology.id.au>
 Tiago Rodrigues <tmcrodrigues@gmail.com>
@@ -314,6 +319,7 @@ Tom Taylor <tom@tomtaylor.co.uk>
 ulteriorlife <ulteriorlife@gmail.com>
 Vadim Baryshev <vadimbaryshev@gmail.com>
 Vegard B. Bugge <vegabug@live.no>
+Viachaslau <pmstss@gmail.com>
 Vincent Desjardins <vdesjardins@gmail.com>
 Vincent Siao <vincent@asana.com>
 VinothKumar Raman <vinoth@indix.com>

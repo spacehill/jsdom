@@ -11,7 +11,7 @@ function fromFixtureFile(fixture, options) {
   return JSDOM.fromFile(path.resolve(__dirname, "fixtures/from-file", fixture), options);
 }
 
-describe("API: JSDOM.fromFile()", { skipIfBrowser: true }, () => {
+describe("API: JSDOM.fromFile()", () => {
   it("should return a rejected promise for a nonexistant file", () => {
     return Promise.all([
       assert.isRejected(JSDOM.fromFile(undefined)),
@@ -33,7 +33,7 @@ describe("API: JSDOM.fromFile()", { skipIfBrowser: true }, () => {
       dom.window.onload = resolve;
     });
 
-    assert.strictEqual(dom.window.getComputedStyle(dom.window.document.querySelector("p")).color, "red");
+    assert.strictEqual(dom.window.getComputedStyle(dom.window.document.querySelector("p")).color, "rgb(255, 0, 0)");
   });
 
   describe("contentType option defaulting", () => {

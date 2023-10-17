@@ -26,6 +26,46 @@ Other guidelines:
 * Roughly order changes within those groupings by impact.
 -->
 
+## 22.1.0
+
+* Added `crypto.randomUUID()`. (jamesbvaughan)
+* Added `DOMRect` and `DOMRectReadOnly`.
+* Added `AbortSignal.timeout()`.
+* Added `abortSignal.throwIfAborted()`.
+* Added support for the `submitter` argument to the `FormData` constructor. (jenseng)
+* Improved `getComputedStyle()`'s results for color-based properties, to resolve named colors and attempt to provide initial inheritance support. (hoekz-wwt)
+* Updated `Window`'s event handler properties (e.g. `oncopy`, `ontouchstart`, etc.) to reflect the latest list from the standard.
+* Fixed `DOMParser`-created documents to inherit their URL from the creating document.
+
+## 22.0.0
+
+* Node.js v16 is now the minimum supported version.
+* Removed support for running jsdom in the browser via a [browserified](https://browserify.org/) bundle. This carried with it too much complexity, especially for our testing infrastructure, and [a testing package we relied on was recently deprecated](https://github.com/karma-runner/karma#karma-is-deprecated-and-is-not-accepting-new-features-or-general-bug-fixes).
+
+## 21.1.2
+
+* Fixed `setRangeText()` used on `<input>` and `<textarea>` elements to calculate the new end index correctly. (pmstss)
+* Fixed `pageX`, `pageY`, `offsetX`, and `offsetY` on `MouseEvent`s during dispatch. (jenseng)
+* Upgraded `nwsapi` to v2.2.4, bringing along various fixes to our selector engine.
+
+## 21.1.1
+
+* Fixed `jsdom.reconfigure()` to also adjust the URL as seen by the history API, so that e.g. `history.replaceState(null, "")` would not mess up the URL. (jdufresne)
+* Fixed `location.hash = ""` to leave any `#` in location.href.
+* Fixes a few bugs with CSS parsing by replacing `cssom` with `rweb-cssom`, since the latter is maintained. (seanparmelee)
+
+## 21.1.0
+
+* Added `x`, `y`, `pageX`, `pageY`, `offsetX`, and `offsetY` to `MouseEvent`. (jenseng, ViniciusFXavier)
+* Added support for `unset` with `getComputedStyle()`. (jsnajdr)
+* Added the `submitter` property to `SubmitEvent`. (jenseng)
+* Fixed `MouseEvent`'s `screenX` and `screenY` to no longer coerce to integers, allowing fractional values. (jenseng)
+* Fixed `formEl.submit()` to not longer fire `submit` events. (jenseng)
+* Fixed stylesheets to no longer affect the document after their corresponding `<link>` is removed. (jsnajdr)
+* Fixed `pointer-events` to inherit when used with `getComputedStyle()`. (jnajdr)
+* Fixed `<script>` elements with no `src=""` to no longer fire `load` events. (t1ger2080)
+* Improved `getComputedStyle()` to cache its results, which should make it much faster. (jsnajdr)
+
 ## 21.0.0
 
 A potentially-breaking bug fix:
@@ -39,7 +79,7 @@ Other changes:
 * Fixed `defer=""` `<script>` elements that are added after `DOMContentLoaded` to execute, instead of being skipped.
 * Fixed `selectElement.selectedOptions` being incorrect when `optionElement.selected` is set. This was a regression introduced in v20.0.1. Unfortunately this also reverts the performance improvement when appending `<option>` elements that was introduced then. (eps1lon)
 * Fixed the `self`, `locationbar`, `menubar`, `personalbar`, `scrollbars`, `statusbar`, `toolbar`, `frames`, `parent`, `external`, `length`, and `screen` properties of `Window` to be replaceable: that is, setting them will override their values, instead of having the new value be ignored. (ExE-Boss)
-* Fixed a few issues with `JSOM.fromURL()` in the browser build of jsdom. (LungZeno)
+* Fixed a few issues with `JSDOM.fromURL()` in the browser build of jsdom. (LungZeno)
 
 ## 20.0.3
 

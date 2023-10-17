@@ -168,7 +168,7 @@ describe("API: JSDOM class's methods", () => {
     });
   });
 
-  describe("getInternalVMContext", { skipIfBrowser: true }, () => {
+  describe("getInternalVMContext", () => {
     it("should throw when runScripts is left as the default", () => {
       const dom = new JSDOM();
 
@@ -320,6 +320,21 @@ describe("API: JSDOM class's methods", () => {
         assert.strictEqual(window.location.href, "http://example.com/");
         assert.strictEqual(window.document.URL, "http://example.com/");
         assert.strictEqual(window.document.documentURI, "http://example.com/");
+      });
+
+      it("should update the URL used by history.replaceState()", () => {
+        const dom = new JSDOM(``, { url: "http://example.com/" });
+        const { window } = dom;
+
+        assert.strictEqual(window.document.URL, "http://example.com/");
+
+        dom.reconfigure({ url: "http://localhost/" });
+
+        assert.strictEqual(window.document.URL, "http://localhost/");
+
+        window.history.replaceState(null, "");
+
+        assert.strictEqual(window.document.URL, "http://localhost/");
       });
     });
   });
